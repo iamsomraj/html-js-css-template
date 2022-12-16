@@ -8,3 +8,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+button {
+  padding: 10px 20px;
+  border: 1px solid #eee;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+}
