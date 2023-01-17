@@ -7,8 +7,6 @@ const print = function () {
   return this.firstName + ' ' + this.lastName;
 };
 
-console.log(print.call(person));
-
 /**
  * @description call immediately invokes the function with the new context and arguemnts
  * @param {*} context
@@ -35,3 +33,11 @@ Function.prototype.myBind = function (context, arg) {
 
 const newPrint = print.myBind(person);
 console.log(newPrint());
+
+
+Function.prototype.myApply = function (context, arg) {
+    context._this = this;
+    return context._this(arg);
+}
+
+console.log(print.myApply(person));
