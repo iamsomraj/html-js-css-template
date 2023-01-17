@@ -6,6 +6,9 @@ const person = {
 const print = function () {
   return this.firstName + ' ' + this.lastName;
 };
+
+console.log(print.call(person));
+
 /**
  * @description call immediately invokes the function with the new context and arguemnts
  * @param {*} context
@@ -15,6 +18,8 @@ Function.prototype.myCall = function (context, ...args) {
   context._this = this;
   return context._this(...args);
 };
+
+console.log(print.myCall(person));
 
 /**
  * @description bind returns a new function which can be invoked later and that function has new context and arguements
