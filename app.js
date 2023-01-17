@@ -2,7 +2,7 @@ const btnEl = document.getElementById('btn');
 
 const debounce = (fn, delay) => {
   let timer;
-  return (...args) => {
+  return function (...args) {
     if (timer) {
       clearTimeout(timer);
     }
