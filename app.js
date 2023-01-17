@@ -1,5 +1,6 @@
 // What is function currying?
-// Function currying is a technique of evaluating function with multiple arguments, into sequence of functions with single argument.
+// Function currying is a technique of evaluating function with multiple arguments
+// into sequence of functions each with single argument.
 
 // By Bind Method
 const multiply = function (a, b) {
