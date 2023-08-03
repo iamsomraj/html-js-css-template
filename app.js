@@ -5,14 +5,11 @@ function memoize(fn) {
   let storedValues = {};
   return function (...args) {
     const jsonArgs = JSON.stringify(args);
-    if (storedValues[jsonArgs]) {
+    if (jsonArgs in storedValues) {
       return storedValues[jsonArgs];
     }
     const value = fn(...args);
-    storedValues = {
-      ...storedValues,
-      [jsonArgs]: value,
-    };
+    storedValues[jsonArgs] = value;
     return value;
   };
 }
