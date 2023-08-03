@@ -2,7 +2,7 @@
  * @param {Function} fn
  */
 function memoize(fn) {
-  let storedValues = {};
+  const storedValues = {};
   return function (...args) {
     const jsonArgs = JSON.stringify(args);
     if (jsonArgs in storedValues) {
