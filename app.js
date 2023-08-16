@@ -6,9 +6,9 @@ const flatten = (arr, depth = Infinity) => {
   }
   return arr.reduce((acc, curr) => {
     if (Array.isArray(curr)) {
-      acc = acc.concat(flatten(curr, depth - 1));
+      return acc.concat(flatten(curr, depth - 1));
     } else {
-      acc = [...acc, curr];
+      return [...acc, curr];
     }
     return acc;
   }, []);
