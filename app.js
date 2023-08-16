@@ -10,7 +10,6 @@ const flatten = (arr, depth = Infinity) => {
     } else {
       return [...acc, curr];
     }
-    return acc;
   }, []);
 };
 
