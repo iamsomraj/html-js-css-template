@@ -28,4 +28,4 @@ function minus(minusValue) {
 }
 
 const res = plus(10).minus(5).plus(3).minus(2).value();
-
+console.log(res); // Output: 6
