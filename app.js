@@ -24,10 +24,10 @@ console.log(print.myCall(person));
  * @param {*} context
  * @param {*} arg
  */
-Function.prototype.myBind = function (context, arg) {
+Function.prototype.myBind = function (context, ...args) {
   context._this = this;
-  return function () {
-    return context._this(arg);
+  return function (...newArgs) {
+    return context._this(...args, ...newArgs);
   };
 };
 
