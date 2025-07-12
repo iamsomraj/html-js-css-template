@@ -54,3 +54,22 @@ resultAllSettled.then((values) => {
   console.log('Promise.allSettled');
   console.log(values);
 });
+
+function myPromiseRace(promises) {
+  return new Promise((resolve, reject) => {
+    promises.forEach((promiseItem) => {
+      promiseItem.then(resolve).catch(reject);
+    });
+  });
+}
+
+const resultRace = myPromiseRace([promise1, promise2]);
+resultRace
+  .then((value) => {
+    console.log('Promise.race');
+    console.log(value);
+  })
+  .catch((reason) => {
+    console.log('Promise.race');
+    console.log(reason);
+  });
